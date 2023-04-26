@@ -19,11 +19,7 @@
         tools:layout_editor_absoluteX="77dp"
         tools:layout_editor_absoluteY="2dp">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.appcompat.widget.Toolbar>
 
     <ImageView
@@ -173,6 +169,7 @@
         app:menu="@menu/c_menu_toolber" />
 
     <ImageView
+        android:id="@+id/signout"
         android:layout_width="80dp"
         android:layout_height="50dp"
         android:src="@drawable/signout"

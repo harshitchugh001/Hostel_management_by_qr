@@ -6,6 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".ShowQr">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolberMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FF5722"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:navigationIcon="@drawable/ic_baseline_menu_24"
+        app:title="Student Page"
+        app:titleMarginStart="40dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="77dp"
+        tools:layout_editor_absoluteY="2dp">
+
+
+    </androidx.appcompat.widget.Toolbar>
+
 
     <ImageView
         android:id="@+id/idIVQrcode"
@@ -135,6 +151,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:menu="@menu/c_menu_toolber" />
+
+    <ImageView
+        android:id="@+id/signout"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:src="@drawable/signout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.951"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.009"></ImageView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

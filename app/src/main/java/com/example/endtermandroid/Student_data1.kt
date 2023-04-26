@@ -4,18 +4,21 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
 class Student_data1 : AppCompatActivity() {
-
+    private lateinit var auth: FirebaseAuth
     private lateinit var name: TextView
     private lateinit var number: TextView
     private lateinit var course: TextView
     private lateinit var authId: String
+    private lateinit var signout:ImageView
     private lateinit var database : DatabaseReference
 
 
@@ -27,6 +30,7 @@ class Student_data1 : AppCompatActivity() {
         name = findViewById(R.id.name)
         number = findViewById(R.id.number)
         course = findViewById(R.id.course)
+        signout=findViewById(R.id.signout)
         authId = intent.getStringExtra("email").toString()
         var jugaad=intent.getStringExtra("email").toString()
         var email=intent.getStringExtra("email").toString()
@@ -36,6 +40,12 @@ class Student_data1 : AppCompatActivity() {
 
 
         val footer = findViewById<BottomNavigationView>(R.id.footer)
+
+
+        signout.setOnClickListener(){
+            auth.signOut()
+            startActivity(Intent(this, Selection_page::class.java))
+        }
 
         footer.setOnNavigationItemSelectedListener() {
             when (it.itemId) {

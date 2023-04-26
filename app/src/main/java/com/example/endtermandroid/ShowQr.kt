@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.zxing.BarcodeFormat
@@ -21,7 +22,9 @@ class ShowQr : AppCompatActivity() {
     private lateinit var name: TextView
     private lateinit var number: TextView
     private lateinit var course: TextView
+    private lateinit var auth: FirebaseAuth
     private lateinit var authId: String
+    private lateinit var signout:ImageView
     private lateinit var database : DatabaseReference
     private lateinit var qrCodeImageView: ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,12 +35,18 @@ class ShowQr : AppCompatActivity() {
         number = findViewById(R.id.number)
         course = findViewById(R.id.course)
         qrCodeImageView=findViewById(R.id.idIVQrcode)
+        signout=findViewById(R.id.signout)
         authId = intent.getStringExtra("jugaad").toString()
         var email=intent.getStringExtra("jugaad").toString()
 
         readData(authId)
         Toast.makeText(this, authId, Toast.LENGTH_SHORT).show()
         val footer = findViewById<BottomNavigationView>(R.id.footer)
+
+        signout.setOnClickListener(){
+            auth.signOut()
+            startActivity(Intent(this, Selection_page::class.java))
+        }
 
         footer.setOnNavigationItemSelectedListener() {
             when (it.itemId) {

@@ -4,9 +4,13 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import androidx.cardview.widget.CardView
+import com.google.firebase.auth.FirebaseAuth
 
 class Gaurd_work : AppCompatActivity() {
+    private lateinit var signout: ImageView
+    private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gaurd_work)
@@ -16,6 +20,11 @@ class Gaurd_work : AppCompatActivity() {
         var checkin=findViewById<CardView>(R.id.checkin)
         var checkout=findViewById<CardView>(R.id.checkout)
         var went=findViewById<Button>(R.id.went)
+        signout=findViewById(R.id.signout)
+        signout.setOnClickListener(){
+            auth.signOut()
+            startActivity(Intent(this, Selection_page::class.java))
+        }
 
         register.setOnClickListener(){
             val intent= Intent(this,Student_register::class.java)

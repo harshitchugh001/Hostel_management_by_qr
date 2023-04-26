@@ -7,17 +7,33 @@
     android:background="@color/skyblue"
     tools:context=".Gaurd_work">
 
-    <TextView
-        android:layout_width="329dp"
-        android:layout_height="61dp"
-        android:text="Student's Work"
-        android:textAlignment="center"
-        android:textSize="35dp"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolberMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FF5722"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:navigationIcon="@drawable/ic_baseline_menu_24"
+        app:title="Gaurd work"
+        app:titleMarginStart="85dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="77dp"
+        tools:layout_editor_absoluteY="2dp">
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/signout"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:src="@drawable/signout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.951"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.06"></TextView>
+        app:layout_constraintVertical_bias="0.009"></ImageView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/checkout"
